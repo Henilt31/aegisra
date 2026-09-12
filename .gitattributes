@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.jsx linguist-detectable=true
+*.js linguist-detectable=true
+*.css linguist-detectable=true
+dist/* linguist-vendored
+dist/** linguist-vendored
