@@ -1,0 +1,9 @@
+node_modules/
+data.json
+aegisra.db
+aegisra.db-shm
+aegisra.db-wal
+.env
+.DS_Store
+Thumbs.db
+*.log
