@@ -5,6 +5,10 @@ aegisra.db
 aegisra.db-shm
 aegisra.db-wal
 .env
+.dev.vars
+.env.*.bak
+.wrangler/
+.playwright-mcp/
 .DS_Store
 Thumbs.db
 *.log

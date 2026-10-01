@@ -1,0 +1,21 @@
+name = "aegisra"
+main = "worker/index.js"
+compatibility_date = "2025-09-01"
+
+# Build the React (Vite) frontend into ./dist before `wrangler dev`/`deploy`.
+[build]
+command = "npm run build"
+
+# Serve the built React SPA as static assets. Non-asset, non-API paths fall back
+# to index.html (the app uses hash routing, so this is just a safety net).
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+# Cloudflare D1 (SQLite-compatible) -> available in the Worker as env.DB
+[[d1_databases]]
+binding = "DB"
+database_name = "aegisra-db"
+database_id = "c83936ce-6e2b-4348-b7b4-135f7fc9a70c"
+migrations_dir = "migrations"

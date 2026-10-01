@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "node server.cjs"
+    "start": "node server.cjs",
+    "cf:dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply aegisra-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply aegisra-db --remote"
   },
   "engines": {
     "node": ">=22.17.1"
@@ -17,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "wrangler": "^4.146.0"
   }
 }
