@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.env
+*.log
+aegisra.db
+aegisra.db-shm
+aegisra.db-wal
+.DS_Store
+Thumbs.db

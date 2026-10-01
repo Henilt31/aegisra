@@ -5,7 +5,13 @@ const crypto = require('crypto');
 const { DatabaseSync } = require('node:sqlite');
 
 const root = __dirname;
-const db = new DatabaseSync(path.join(root, 'aegisra.db'));
+// Database location is configurable for production (e.g. a Railway persistent
+// volume mounted at /data). Falls back to the repo root to preserve local dev.
+// WAL/SHM journal files are created alongside this file, so they land on the
+// same (persistent) volume automatically.
+const dbPath = process.env.AEGISRA_DB_PATH || path.join(root, 'aegisra.db');
+fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+const db = new DatabaseSync(dbPath);
 
 db.exec(`
   PRAGMA journal_mode=WAL;
@@ -358,4 +364,7 @@ const app = http.createServer(async (q, r) => {
 });
 
 const port = process.env.PORT || 4173;
-app.listen(port, () => console.log(`Aegisra running at http://localhost:${port}`));
+app.listen(port, () => {
+  console.log(`Aegisra listening on port ${port}`);
+  console.log(`Aegisra database: ${dbPath}`);
+});
