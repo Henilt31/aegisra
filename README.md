@@ -12,6 +12,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](https://github.com/Henilt31/aegisra/pulls)
 
+### 🌐 Live app — **[https://henil.aegisra.workers.dev](https://henil.aegisra.workers.dev)**
+
 <p align="center">
   <a href="#what-is-aegisra"><strong>Explore Features »</strong></a>
   <br />
