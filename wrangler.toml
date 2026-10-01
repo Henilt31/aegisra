@@ -1,4 +1,4 @@
-name = "aegisra"
+name = "henil"
 main = "worker/index.js"
 compatibility_date = "2025-09-01"
 
